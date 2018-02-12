@@ -1,4 +1,4 @@
-# Frontend Starter
+# Frontend Boilerplate
 
 Requirements:
 - node version 8
