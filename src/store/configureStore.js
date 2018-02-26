@@ -6,9 +6,7 @@ import thunk from 'redux-thunk'
 import rootReducer from '../reducers/rootReducer'
 
 export const history = createHistory()
-
 const middleware = [thunk, routerMiddleware(history)]
-
 const composedMiddleware = compose(applyMiddleware(...middleware))
 
 export default function configureStore() {
