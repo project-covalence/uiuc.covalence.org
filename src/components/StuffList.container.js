@@ -1,7 +1,7 @@
 // @flow
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchStuff } from './../actions/stuff.action'
+import { fetchStuff } from './../actions'
 import StuffList from './StuffList.component'
 import type { StuffStateProps } from './../types'
 
