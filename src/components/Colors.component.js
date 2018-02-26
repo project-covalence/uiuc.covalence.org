@@ -1,14 +1,7 @@
 // @flow
-import React, { Component } from 'react'
+import React from 'react'
 import type { ColorsProps } from './../types'
 
-export default class StuffList extends Component<ColorsProps> {
-  render() {
-    const { colors } = this.props
-    return colors.length > 0 ? (
-      colors.map(color => <div key={color}>{color}</div>)
-    ) : (
-      <div>No Colors</div>
-    )
-  }
+export default function Colors({ colors }: ColorsProps) {
+  return colors.map(color => <div key={color}>{color}</div>)
 }
