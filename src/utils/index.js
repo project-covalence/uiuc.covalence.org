@@ -1,3 +1,4 @@
+// @flow
 import type { Stuff } from './../types'
 
 function mockFetchStuff(): Promise<{ stuff: Stuff }> {

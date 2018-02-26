@@ -1,3 +1,4 @@
+// @flow
 import App from './App.component'
 import Navbar from './Navbar.component'
 
