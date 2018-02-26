@@ -1,9 +1,13 @@
 // @flow
 
 export type Store = {
-  stuff: Stuff
+  stuff: Stuff,
+  colors: Colors
 }
 
+/**
+ *  Stuff
+ */
 export type Stuff = Array<string>
 export type StuffAction = {
   type: string,
@@ -16,3 +20,15 @@ export type StuffDispatchProps = {
   fetchStuff(): Promise<Stuff>
 }
 export type StuffListProps = StuffStateProps & StuffDispatchProps
+
+/**
+ *  Colors
+ */
+export type Colors = Array<string>
+export type ColorsAction = {
+  type: string,
+  payload: Colors
+}
+export type ColorsProps = {
+  colors: Colors
+}

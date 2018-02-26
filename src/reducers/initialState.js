@@ -2,7 +2,8 @@
 import type { Store } from './../types'
 
 const initialState: Store = {
-  stuff: []
+  stuff: [],
+  colors: ['red', 'yellow', 'blue']
 }
 
 export default initialState
