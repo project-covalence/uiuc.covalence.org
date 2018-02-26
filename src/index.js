@@ -1,3 +1,4 @@
+// @flow
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 
@@ -24,7 +25,7 @@ ReactDOM.render(
       </div>
     </ConnectedRouter>
   </Provider>,
-  document.getElementById('root')
+  (document.getElementById('root'): any)
 )
 
 registerServiceWorker()
