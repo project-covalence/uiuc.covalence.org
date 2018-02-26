@@ -1,8 +1,9 @@
+// @flow
 import React, { Component } from 'react'
 import { Grid, Navbar, Jumbotron } from 'react-bootstrap'
 import './styles/app.css'
 
-class App extends Component {
+class App extends Component<void> {
   render() {
     return (
       <div>
