@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react'
 import { Grid, Navbar, Jumbotron } from 'react-bootstrap'
+import StuffList from './components/StuffList.container'
 import './styles/app.css'
 
 class App extends Component<void> {
@@ -20,6 +21,7 @@ class App extends Component<void> {
         <Jumbotron className="banner">
           <Grid>
             <h1>Hola</h1>
+            <StuffList />
           </Grid>
         </Jumbotron>
       </div>
