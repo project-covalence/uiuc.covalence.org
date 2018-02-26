@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { Grid, Navbar, Jumbotron } from 'react-bootstrap'
 import StuffList from './components/StuffList.container'
 import './styles/app.css'
@@ -21,6 +22,7 @@ class App extends Component<void> {
         <Jumbotron className="banner">
           <Grid>
             <h1>Hola</h1>
+            <Link to="/colors">Colors</Link>
             <StuffList />
           </Grid>
         </Jumbotron>
