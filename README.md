@@ -30,6 +30,9 @@ You will also see any lint errors in the console.
 ### React Devtools
 Install the [react devtools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) to unlock hidden superpowers. Learn more about it [here](https://github.com/facebook/react-devtools).
 
+### Redux Devtools
+Install the [redux devtools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en) to unlock even more hidden superpowers. Learn more about it [here](https://github.com/gaearon/redux-devtools).
+
 ### Flow
 [Flow](https://flow.org/en/) is a static type checker for javascript. Please see the Linting section below on how to set it up.
 
