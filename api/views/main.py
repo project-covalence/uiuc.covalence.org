@@ -42,8 +42,8 @@ def get_all_items():
     return create_response(data={"items": serialize_list(db.get_items())})
 
 
-@main.route("/:index", methods=["GET"])
-def get_item(index):
+@main.route("/<id>", methods=["GET"])
+def get_item(id):
     return create_response()
 
 
@@ -64,6 +64,6 @@ def remove_item():
     )
 
 
-@main.route("/:index", methods=["PUT"])
-def edit_item(index):
+@main.route("/<id>", methods=["PUT"])
+def edit_item(id):
     return create_response()
