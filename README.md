@@ -22,12 +22,6 @@ Please Please **PLEASE** read the documentation if you don't understand somethin
 
 Here are some quickstart instructions, although I would look at the [documentation](https://github.com/tko22/flask-boilerplate/wiki) for more details.
 
-First start a postgres docker container and persist the data with a volume `flask-app-db`:
-
-```
-docker run -e POSTGRES_USER=testusr -e POSTGRES_PASSWORD=password -e POSTGRES_DB=testdb -p 5432:5432 -v flask-app-db:/var/lib/postgresql/data -d postgres:10
-```
-
 Then, install the python dependencies and run the server:
 
 ```
@@ -39,7 +33,6 @@ pipenv run python manage.py runserver
 ### Repository Contents
 
 - `api/views/` - Holds files that define your endpoints
-- `api/models.py` - Defines your database schema
 - `api/__init__.py` - What is initially ran when you start your application
 - `api/utils.py` - utility functions and classes - explained [here](https://github.com/tko22/flask-boilerplate/wiki/Conventions)
 - `api/core.py` - includes core functionality including error handlers and logger
