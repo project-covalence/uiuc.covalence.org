@@ -23,6 +23,7 @@ class Database:
     def get_items(self):
         return self.items
 
+db = Database()
 
 def find_item(items, id):
     for index in range(len(items)):
