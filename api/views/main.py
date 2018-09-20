@@ -24,10 +24,6 @@ class Database:
         return self.items
 
 
-db = Database()
-db.get_items().append(TodoItem("Megha is a god"))
-
-
 def find_item(items, id):
     for index in range(len(items)):
         if id == items[index].id:
