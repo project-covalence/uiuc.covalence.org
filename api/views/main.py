@@ -26,8 +26,10 @@ class Database:
 db = Database()
 
 def find_item(items, id):
+    print(type(id))
     for index in range(len(items)):
-        if id == items[index].id:
+        print(type(items[index].id))
+        if str(id) == str(items[index].id):
             return index
     return -1
 
@@ -41,12 +43,28 @@ def get_all_items():
 
 @main.route("/<id>", methods=["GET"])
 def get_item(id):
-    return create_response()
+    index = find_item(db.get_items(), id)
+    valid = index >= 0
+    if valid:
+        item = db.get_items()[index]
+    return create_response(data={"item": item.to_dict()} if valid else {}, 
+                           status=200 if valid else 404,
+                           message="" if valid else "Item doesn't exist")
 
 
 @main.route("/", methods=["POST"])
-def add_item():
-    return create_response()
+def add_item(): 
+    """
+        request Object:
+        {
+            'text': __
+        }
+    """
+    request_json = request.get_json()
+    new_item = TodoItem(request_json["text"])
+    items = db.get_items()
+    items.append(new_item)
+    return create_response(status=200)
 
 
 @main.route("/", methods=["DELETE"])
@@ -63,4 +81,12 @@ def remove_item():
 
 @main.route("/<id>", methods=["PUT"])
 def edit_item(id):
-    return create_response()
+    index = find_item(db.get_items(), id)
+    valid = index >= 0
+    if valid:
+        item = db.get_items()[index]
+        request_json = request.get_json()
+        item.text = request_json["text"]
+    return create_response(data={"item": item.to_dict()} if valid else {}, 
+                           status=200 if valid else 404,
+                           message="" if valid else "Item doesn't exist")
