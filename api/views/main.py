@@ -23,7 +23,9 @@ class Database:
     def get_items(self):
         return self.items
 
+
 db = Database()
+
 
 def find_item(items, id):
     print(type(id))
@@ -43,40 +45,26 @@ def get_all_items():
 
 @main.route("/<id>", methods=["GET"])
 def get_item(id):
-    index = find_item(db.get_items(), id)
-    valid = index >= 0
-    if valid:
-        item = db.get_items()[index]
-    return create_response(data={"item": item.to_dict()} if valid else {}, 
-                           status=200 if valid else 404,
-                           message="" if valid else "Item doesn't exist")
+    # in-class tutorial
+    pass
 
 
 @main.route("/", methods=["POST"])
-def add_item(): 
+def add_item():
     """
-        request Object:
-        {
-            'text': __
-        }
+    request Object:
+    {
+        'text': __
+    }
     """
-    request_json = request.get_json()
-    new_item = TodoItem(request_json["text"])
-    items = db.get_items()
-    items.append(new_item)
-    return create_response(status=200)
+    # in-class tutorial
+    pass
 
 
 @main.route("/", methods=["DELETE"])
 def remove_item():
-    request_json = request.get_json()
-    index = find_item(db.get_items(), request_json["id"])
-    if index != -1:
-        del db.get_items()[index]
-    valid = index >= 0
-    return create_response(
-        status=200 if valid else 404, message="" if valid else "Item doesn't exist"
-    )
+    # in-class tutorial
+    pass
 
 
 @main.route("/<id>", methods=["PUT"])
@@ -87,6 +75,8 @@ def edit_item(id):
         item = db.get_items()[index]
         request_json = request.get_json()
         item.text = request_json["text"]
-    return create_response(data={"item": item.to_dict()} if valid else {}, 
-                           status=200 if valid else 404,
-                           message="" if valid else "Item doesn't exist")
+    return create_response(
+        data={"item": item.to_dict()} if valid else {},
+        status=200 if valid else 404,
+        message="" if valid else "Item doesn't exist",
+    )
