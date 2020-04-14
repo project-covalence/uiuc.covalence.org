@@ -1,5 +1,5 @@
 {
-  "name": "frontend-starter",
+  "name": "covalence-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +19,8 @@
     "react-router-redux": "^5.0.0-alpha.9",
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^5.1.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
@@ -31,7 +32,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
-    "flow": "flow"
+    "flow": "flow",
+    "lint": "eslint --fix -c .eslintrc --ext .js,.jsx src"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -40,6 +42,15 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.15.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
     "prettier": "^1.7.4"
   },
   "prettier": {
