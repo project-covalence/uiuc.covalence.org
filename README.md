@@ -7,7 +7,7 @@
   </a>
 </div>
 
-<h3 align="center">Website for Covalence: Students Against COVID</h3>
+<h4 align="center">Website for Covalence: Students Against COVID</h4>
 
 ## Background
 
