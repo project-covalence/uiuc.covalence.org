@@ -2,4 +2,45 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+.float-right {
+  float: right;
+}
+
+.text-container {
+  padding: 50px;
+}
+
+.navbar-brand {
+  margin: 0;
+  padding: 6px;
+}
+
+.navbar-offset {
+  margin-top: 50px;
+}
+
+.banner-row {
+  min-height: 600px;
+  background-image: url("../media/covalence_banner.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.purple-button {
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+#banner-button {
+  min-width: 300px;
+}
+
+#banner-cta {
+  position: relative;
+  top: 450px;
 }

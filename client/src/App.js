@@ -7,16 +7,22 @@ import {
   useRouteMatch,
   useParams
 } from 'react-router-dom'
+import Home from './pages/Home.js'
 
 import Navbar from './components/Navbar.component'
 
 const App = () => {
   return (
-    <div>
-      <Router>
+    <Router>
+      <div>
         <Navbar />
-      </Router>
-    </div>
+        <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   )
 }
 
