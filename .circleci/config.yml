@@ -7,6 +7,9 @@ jobs:
       - checkout
       - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+      - where_are_we:
+          command: |
+            ls -al
       - run:
           command: |
             python3 -m venv venv
