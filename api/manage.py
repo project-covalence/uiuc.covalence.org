@@ -1,5 +1,7 @@
 from flask_script import Manager
-from api import create_app
+import sys
+sys.path.append("..")
+from api.pkg import create_app
 
 app = create_app()
 

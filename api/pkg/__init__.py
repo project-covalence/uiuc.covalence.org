@@ -4,7 +4,7 @@ import logging
 from flask import Flask, request
 from flask_cors import CORS
 
-from api.core import all_exception_handler
+from api.pkg.core import all_exception_handler
 
 
 class RequestFormatter(logging.Formatter):
@@ -37,9 +37,9 @@ def create_app(test_config=None):
     app.logger.setLevel(logging.DEBUG)
 
     # import and register blueprints
-    from api.views import main
+    from api.pkg.views import main
 
-    app.register_blueprint(main.main)
+    app.register_blueprint(main.main, url_prefix="/api")
 
     # register error Handler
     app.register_error_handler(Exception, all_exception_handler)
