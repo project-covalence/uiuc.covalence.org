@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom'
 
 import Navbar from './components/Navbar.component'
+import StudentTreeLeaf from './components/StudentTreeLeaf.component'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Router>
         <Navbar />
       </Router>
+      <StudentTreeLeaf />
     </div>
   )
 }
