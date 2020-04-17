@@ -1,10 +1,12 @@
 import os
 import logging
+from dotenv import load_dotenv
 
 from flask import Flask, request
 from flask_cors import CORS
 
 from api.pkg.core import all_exception_handler
+from mongoengine import connect
 
 
 class RequestFormatter(logging.Formatter):
@@ -16,7 +18,8 @@ class RequestFormatter(logging.Formatter):
 
 def create_app(test_config=None):
     app = Flask(__name__)
-
+    load_dotenv()
+    connect('project', host=os.getenv("COVALENCE_DB_URL"))
     CORS(app)  # add CORS
 
     # logging

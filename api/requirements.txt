@@ -11,3 +11,4 @@ urllib3==1.22
 Flask-Cors==3.0.3
 flask-script==2.0.6
 flask==1.0.2
+mongoengine==0.19.1

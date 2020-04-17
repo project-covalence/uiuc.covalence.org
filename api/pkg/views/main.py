@@ -2,45 +2,24 @@ from flask import Blueprint, jsonify, request
 from api.pkg.core import create_response, serialize_list, logger
 from datetime import datetime
 from uuid import uuid1
+from api.pkg.models.project import Project
 
 main = Blueprint("main", __name__)
 
-
-class TodoItem:
-    def __init__(self, text):
-        self.id = uuid1()
-        self.text = text
-        self.time = datetime.now()
-
-    def to_dict(self):
-        return {"id": self.id, "text": self.text, "time": self.time}
-
-
-class Database:
-    def __init__(self):
-        self.items = []
-
-    def get_items(self):
-        return self.items
-
-
-db = Database()
-
-
-def find_item(items, id):
-    print(type(id))
-    for index in range(len(items)):
-        print(type(items[index].id))
-        if str(id) == str(items[index].id):
-            return index
-    return -1
+def to_dict(items):
+   # Convert from QuerySet to list of mongo objects
+   items_to_mongo = list(map(lambda x: x.to_mongo(), items))
+   for item in items_to_mongo: 
+       # Stringify the object id from type ObjectId
+       item["_id"] = str(item["_id"])
+   return items_to_mongo
 
 
 # success code message result
 # function that is called when you visit /
 @main.route("/", methods=["GET"])
 def get_all_items():
-    return create_response(data={"items": serialize_list(db.get_items())})
+    return create_response(data={"items": to_dict(Project.objects.all())})
 
 
 @main.route("/<id>", methods=["GET"])
