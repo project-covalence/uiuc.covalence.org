@@ -24,7 +24,7 @@ def create_app(test_config=None):
         "%(asctime)s %(remote_addr)s: requested %(url)s: %(levelname)s in [%(module)s: %(lineno)d]: %(message)s"
     )
     if app.config.get("LOG_FILE"):
-        fh = logging.FileHandler(app.config.get("LOG_FILE"))
+        fh = logging.FileHandler("./log.txt")
         fh.setLevel(logging.DEBUG)
         fh.setFormatter(formatter)
         app.logger.addHandler(fh)
@@ -38,7 +38,6 @@ def create_app(test_config=None):
 
     # import and register blueprints
     from api.views import main
-
     app.register_blueprint(main.main)
 
     # register error Handler

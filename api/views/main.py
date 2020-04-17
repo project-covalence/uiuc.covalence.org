@@ -38,18 +38,21 @@ def find_item(items, id):
 
 # success code message result
 # function that is called when you visit /
-@main.route("/", methods=["GET"])
+@main.route("/api/", methods=["GET"])
 def get_all_items():
+    print("HERE")
     return create_response(data={"items": serialize_list(db.get_items())})
 
 
-@main.route("/<id>", methods=["GET"])
+@main.route("/api/<id>", methods=["GET"])
 def get_item(id):
     # in-class tutorial
+    print("Hello!")
+    return create_response(data={"id": id})
     pass
 
 
-@main.route("/", methods=["POST"])
+@main.route("/api/", methods=["POST"])
 def add_item():
     """
     request Object:
@@ -61,13 +64,13 @@ def add_item():
     pass
 
 
-@main.route("/", methods=["DELETE"])
+@main.route("/api/", methods=["DELETE"])
 def remove_item():
     # in-class tutorial
     pass
 
 
-@main.route("/<id>", methods=["PUT"])
+@main.route("/api/<id>", methods=["PUT"])
 def edit_item(id):
     index = find_item(db.get_items(), id)
     valid = index >= 0
